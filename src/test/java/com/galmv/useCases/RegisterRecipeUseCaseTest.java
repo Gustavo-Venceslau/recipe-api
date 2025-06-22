@@ -11,8 +11,8 @@ import org.mockito.Mockito;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.galmv.application.useCases.registerRecipe.RegisterRecipeRequest;
-import com.galmv.application.useCases.registerRecipe.RegisterRecipeUseCase;
+import com.galmv.application.interfaces.RegisterRecipeRequest;
+import com.galmv.application.useCases.RegisterRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 import com.galmv.domain.repositories.RecipeRepository;
 

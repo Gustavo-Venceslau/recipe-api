@@ -1,4 +1,4 @@
-package com.galmv.application.useCases.registerRecipe;
+package com.galmv.application.interfaces;
 
 import jakarta.validation.constraints.NotBlank;
 

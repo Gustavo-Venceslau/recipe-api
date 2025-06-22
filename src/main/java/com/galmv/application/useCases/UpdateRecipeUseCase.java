@@ -1,10 +1,11 @@
-package com.galmv.application.useCases.updateRecipe;
+package com.galmv.application.useCases;
 
 import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import com.galmv.application.interfaces.UpdateRecipeRequest;
 import com.galmv.domain.entites.Recipe;
 import com.galmv.domain.exceptions.ResourceNotFoundException;
 import com.galmv.domain.repositories.RecipeRepository;

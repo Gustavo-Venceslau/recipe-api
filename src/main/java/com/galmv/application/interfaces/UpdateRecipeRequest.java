@@ -1,4 +1,4 @@
-package com.galmv.application.useCases.updateRecipe;
+package com.galmv.application.interfaces;
 
 public record UpdateRecipeRequest(
     String title,

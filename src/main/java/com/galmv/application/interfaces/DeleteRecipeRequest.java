@@ -1,4 +1,4 @@
-package com.galmv.application.useCases.deleteRecipe;
+package com.galmv.application.interfaces;
 
 import java.util.UUID;
 

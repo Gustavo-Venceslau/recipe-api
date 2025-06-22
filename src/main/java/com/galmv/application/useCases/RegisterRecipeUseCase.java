@@ -1,7 +1,8 @@
-package com.galmv.application.useCases.registerRecipe;
+package com.galmv.application.useCases;
 
 import org.springframework.stereotype.Service;
 
+import com.galmv.application.interfaces.RegisterRecipeRequest;
 import com.galmv.domain.entites.Recipe;
 import com.galmv.domain.repositories.RecipeRepository;
 
