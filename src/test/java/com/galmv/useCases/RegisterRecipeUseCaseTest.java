@@ -1,4 +1,4 @@
-package com.galmv.recipe.useCases;
+package com.galmv.useCases;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
