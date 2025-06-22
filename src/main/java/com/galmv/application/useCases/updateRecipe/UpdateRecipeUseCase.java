@@ -1,0 +1,41 @@
+package com.galmv.application.useCases.updateRecipe;
+
+import java.util.Optional;
+import java.util.UUID;
+
+import org.springframework.stereotype.Service;
+
+import com.galmv.domain.entites.Recipe;
+import com.galmv.domain.exceptions.ResourceNotFoundException;
+import com.galmv.domain.repositories.RecipeRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class UpdateRecipeUseCase {
+  private final RecipeRepository recipeRepository;
+
+  public Recipe execute(UUID recipeId, UpdateRecipeRequest Request) {
+    Optional<Recipe> recipeFound = recipeRepository.findById(recipeId);
+
+    if (recipeFound.isEmpty()) {
+      throw new ResourceNotFoundException("Recipe not found to updated");
+    }
+
+    Recipe recipeToUpdate = recipeFound.get();
+
+    updateRecipeData(recipeToUpdate, Request);
+
+    recipeRepository.save(recipeToUpdate);
+
+    return recipeToUpdate;
+  }
+
+  private void updateRecipeData(Recipe recipe, UpdateRecipeRequest data) {
+    recipe.setTitle(data.title());
+    recipe.setDescription(data.description());
+    recipe.setIngredients(data.ingridients());
+    recipe.setInstructions(data.instructions());
+  }
+}
