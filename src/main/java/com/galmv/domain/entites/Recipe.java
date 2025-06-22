@@ -1,6 +1,7 @@
 package com.galmv.domain.entites;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,7 +23,7 @@ import lombok.NoArgsConstructor;
 public class Recipe {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
-  private String id;
+  private UUID id;
   @Column(name = "title", nullable = false)
   private String title;
   @Column(name = "description")
