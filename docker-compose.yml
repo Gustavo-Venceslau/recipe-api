@@ -1,4 +1,17 @@
 services:
+  app:
+    container_name: recipe-api
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/recipe
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    networks:
+      - recip
   database:
     container_name: recipe-database
     image: bitnami/postgresql
@@ -26,6 +39,7 @@ services:
     networks:
       - recipe
     restart: unless-stopped
+
 networks:
   recipe:
     driver: bridge
