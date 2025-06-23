@@ -18,6 +18,8 @@ public class RegisterRecipeUseCase {
         .title(recipe.title())
         .description(recipe.description())
         .ingredients(recipe.ingredients())
+        .servings(recipe.servings())
+        .vegetarian(recipe.vegetarian())
         .instructions(recipe.instructions())
         .build();
 

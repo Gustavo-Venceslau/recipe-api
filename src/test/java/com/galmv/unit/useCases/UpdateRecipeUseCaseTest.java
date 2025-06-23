@@ -1,10 +1,11 @@
-package com.galmv.useCases;
+package com.galmv.unit.useCases;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.Arrays;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -44,7 +45,9 @@ public class UpdateRecipeUseCaseTest {
     UpdateRecipeRequest request = new UpdateRecipeRequest(
         "Updated Cake",
         "Even more delicious",
-        "Flour, Sugar, Cocoa, Eggs, Butter, Vanilla",
+        Arrays.asList("Flour, Sugar, Cocoa, Eggs, Butter, Vanilla"),
+        1,
+        null,
         "Mix and bake for 35 minutes at 180C");
     when(recipeRepository.findById(id)).thenReturn(Optional.of(recipe));
     when(recipeRepository.save(recipe)).thenReturn(recipe);
@@ -65,7 +68,9 @@ public class UpdateRecipeUseCaseTest {
     UpdateRecipeRequest request = new UpdateRecipeRequest(
         "Updated Cake",
         "Even more delicious",
-        "Flour, Sugar, Cocoa, Eggs, Butter, Vanilla",
+        Arrays.asList("Flour, Sugar, Cocoa, Eggs, Butter, Vanilla"),
+        1,
+        null,
         "Mix and bake for 35 minutes at 180C");
     when(recipeRepository.findById(id)).thenReturn(Optional.empty());
 
@@ -79,7 +84,7 @@ public class UpdateRecipeUseCaseTest {
         .id(id)
         .title("Chocolate Cake")
         .description("Delicious and moist chocolate cake")
-        .ingredients("Flour, Sugar, Cocoa, Eggs, Butter")
+        .ingredients(Arrays.asList("Flour, Sugar, Cocoa, Eggs, Butter"))
         .instructions("Mix ingredients and bake for 30 minutes at 180C")
         .build();
   }

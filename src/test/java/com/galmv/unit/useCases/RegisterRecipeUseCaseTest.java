@@ -1,6 +1,8 @@
-package com.galmv.useCases;
+package com.galmv.unit.useCases;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.Arrays;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -35,11 +37,13 @@ public class RegisterRecipeUseCaseTest {
   public void succesfullSaveRecipe() {
     Recipe recipe = createValidRecipe();
 
-    Mockito.when(recipeRepository.save(recipe)).thenReturn(createValidRecipe());
+    Mockito.when(recipeRepository.save(Mockito.any(Recipe.class))).thenReturn(recipe);
 
     RegisterRecipeRequest request = new RegisterRecipeRequest(
         recipe.getTitle(),
         recipe.getDescription(),
+        recipe.getServings(),
+        null,
         recipe.getIngredients(),
         recipe.getInstructions());
 
@@ -55,7 +59,8 @@ public class RegisterRecipeUseCaseTest {
     return Recipe.builder()
         .title("Chocolate Cake")
         .description("Delicious and moist chocolate cake")
-        .ingredients("Flour, Sugar, Cocoa, Eggs, Butter")
+        .servings(1)
+        .ingredients(Arrays.asList("Flour, Sugar, Cocoa, Eggs, Butter"))
         .instructions("Mix ingredients and bake for 30 minutes at 180C")
         .build();
   }

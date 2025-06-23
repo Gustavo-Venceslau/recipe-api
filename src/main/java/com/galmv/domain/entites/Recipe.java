@@ -1,9 +1,11 @@
 package com.galmv.domain.entites;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,9 +31,15 @@ public class Recipe {
   @Column(name = "description")
   private String description;
   @Column(name = "ingredients", nullable = false)
-  private String ingredients;
+  @ElementCollection
+  private List<String> ingredients;
   @Column(name = "instructions", nullable = false)
   private String instructions;
+  @Column(name = "servings", nullable = false)
+  private Integer servings;
+  @Column(name = "vegetarian")
+  @Builder.Default
+  private Boolean vegetarian = false;
   @Column(name = "created_at", nullable = false, updatable = false)
   private LocalDateTime createdAt;
   @Column(name = "updated_at", nullable = false)
