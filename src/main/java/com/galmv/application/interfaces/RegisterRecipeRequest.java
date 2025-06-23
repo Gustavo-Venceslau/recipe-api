@@ -10,6 +10,8 @@ public record RegisterRecipeRequest(
     String description,
     @NotNull(message = "Servings is required") Integer servings,
     Boolean vegetarian,
-    @NotBlank(message = "Ingredients are required") List<String> ingredients,
+    @NotNull(message = "Ingredients are required")
+    @jakarta.validation.constraints.Size(min = 1, message = "At least one ingredient is required")
+    List<String> ingredients,
     @NotBlank(message = "Instructions are required") String instructions) {
 }

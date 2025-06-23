@@ -25,13 +25,13 @@ public class SearchRecipeController {
   private final SearchRecipeUseCase searchRecipeUseCase;
 
   @GetMapping
-  public ResponseEntity<Set<Recipe>> search(
+  public ResponseEntity<Set<Recipe>> handle(
       @RequestParam(required = false) Boolean vegetarian,
       @RequestParam(required = false) Integer servings,
       @RequestParam(required = false) List<String> includeIngredients,
       @RequestParam(required = false) List<String> excludeIngredients,
-      @RequestParam(required = false) String instruction) {
-    try {
+      @RequestParam(required = false) String instruction
+    ) {
       SearchRecipesFilter filter = new SearchRecipesFilter(
           vegetarian,
           servings,
@@ -41,9 +41,5 @@ public class SearchRecipeController {
 
       Set<Recipe> recipes = searchRecipeUseCase.execute(filter);
       return ResponseEntity.ok(recipes);
-    } catch (RuntimeException error) {
-      log.error(error.getMessage());
-      return ResponseEntity.internalServerError().build();
     }
-  }
 }
