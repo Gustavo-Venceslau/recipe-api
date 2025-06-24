@@ -52,9 +52,10 @@ docker-compose up --build
 - **Request Body:**
   ```json
   {
-    "name": "Pasta Carbonara",        // string, required
-    "ingredients": ["Pasta", "Eggs", "Bacon", "Parmesan"], // array of strings, required
-    "instructions": "Boil pasta. Cook bacon. Mix with eggs and cheese." // string, required
+    "title": "Pasta Carbonara",
+    "servings": 4,
+    "ingredients": ["Pasta", "Eggs", "Bacon", "Parmesan"],
+    "instructions": "Boil pasta. Cook bacon. Mix with eggs and cheese."
   }
   ```
 - **Response:** Returns the created recipe with its ID.
@@ -88,9 +89,10 @@ docker-compose up --build
 - **Request Body:**
   ```json
   {
-    "name": "Pasta Carbonara",        // string, required
-    "ingredients": ["Pasta", "Eggs", "Bacon", "Parmesan"], // array of strings, required
-    "instructions": "Boil pasta. Cook bacon. Mix with eggs and cheese." // string, required
+    "title": "Pasta Carbonara",
+    "servings": 6,
+    "ingredients": ["Pasta", "Eggs", "Bacon", "Parmesan", "Salt"],
+    "instructions": "Boil pasta. Cook bacon. Mix with eggs and cheese."
   }
   ```
 - **Response:** Returns the updated recipe.
