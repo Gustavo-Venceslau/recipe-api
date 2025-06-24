@@ -47,7 +47,7 @@ public class SearchRecipeUseCase implements ISearchRecipeUseCase{
     if (filter.includeIngredients() != null && !filter.includeIngredients().isEmpty()) {
       for (String ingridient : filter.includeIngredients()) {
         spec = spec.and((root, query, cb) ->
-          cb.isMember(ingridient, root.get("ingredients")));
+          cb.like(root.join("ingredients"), "%" + ingridient + "%"));
       };
     }
     return spec;
@@ -57,7 +57,7 @@ public class SearchRecipeUseCase implements ISearchRecipeUseCase{
     if (filter.excludeIngredients() != null && !filter.excludeIngredients().isEmpty()) {
       for (String ingridient : filter.excludeIngredients()) {
         spec = spec.and((root, query, cb) ->
-          cb.not(cb.isMember(ingridient, root.get("ingredients"))));
+          cb.not(cb.like(root.join("ingredients"), "%" + ingridient + "%")));
       };
     }
     return spec;
