@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.galmv.adapter.controllers.DeleteRecipeController;
-import com.galmv.application.useCases.implementations.DeleteRecipeUseCase;
+import com.galmv.application.useCases.IDeleteRecipeUseCase;
 import com.galmv.domain.exceptions.ResourceNotFoundException;
 
 import lombok.extern.slf4j.Slf4j;
@@ -35,7 +35,7 @@ public class DeleteRecipeControllerTest {
     MockMvc mockMvc;
 
     @MockitoBean
-    DeleteRecipeUseCase deleteRecipeUseCase;
+    IDeleteRecipeUseCase deleteRecipeUseCase;
 
     @Test
     @DisplayName("Given a valid recipe id, when deleting, it must return 204 No Content")

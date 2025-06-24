@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.galmv.application.interfaces.DeleteRecipeRequest;
-import com.galmv.application.useCases.implementations.DeleteRecipeUseCase;
-
+import com.galmv.application.useCases.IDeleteRecipeUseCase;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,7 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 @Slf4j
 public class DeleteRecipeController {
-  private final DeleteRecipeUseCase deleteRecipeUseCase;
+  private final IDeleteRecipeUseCase deleteRecipeUseCase;
 
   @DeleteMapping
   public ResponseEntity<Void> handle(@PathVariable("id") UUID id) {

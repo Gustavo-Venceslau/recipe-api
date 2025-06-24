@@ -17,6 +17,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.galmv.application.interfaces.DeleteRecipeRequest;
+import com.galmv.application.useCases.IDeleteRecipeUseCase;
 import com.galmv.application.useCases.implementations.DeleteRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 import com.galmv.domain.exceptions.ResourceNotFoundException;
@@ -26,7 +27,7 @@ import com.galmv.domain.repositories.RecipeRepository;
 @ActiveProfiles("test")
 public class DeleteRecipeUseCaseTest {
 
-  DeleteRecipeUseCase deleteRecipeUseCase;
+  IDeleteRecipeUseCase deleteRecipeUseCase;
 
   @Mock
   RecipeRepository recipeRepository;
