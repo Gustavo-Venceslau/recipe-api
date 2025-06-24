@@ -32,7 +32,7 @@ import lombok.extern.slf4j.Slf4j;
 @AutoConfigureMockMvc
 @Slf4j
 public class GetRecipeByIdControllerTest {
-    static String GET_RECIPE_API = "/recipe/";
+    static String GET_RECIPE_API = "/recipes/";
 
     @Autowired
     MockMvc mockMvc;

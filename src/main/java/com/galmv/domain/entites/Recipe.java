@@ -1,6 +1,5 @@
 package com.galmv.domain.entites;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -14,6 +13,7 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
@@ -22,26 +22,23 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Recipe {
+@EqualsAndHashCode(callSuper = true)
+public class Recipe extends BaseEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
-  @Column(name = "title", nullable = false)
+  @Column(name = "title", nullable = false, length = 255)
   private String title;
-  @Column(name = "description")
+  @Column(name = "description", length = 1000)
   private String description;
   @Column(name = "ingredients", nullable = false)
   @ElementCollection
   private List<String> ingredients;
-  @Column(name = "instructions", nullable = false)
+  @Column(name = "instructions", nullable = false, length = 2000)
   private String instructions;
   @Column(name = "servings", nullable = false)
   private Integer servings;
   @Column(name = "vegetarian")
   @Builder.Default
   private Boolean vegetarian = false;
-  @Column(name = "created_at", nullable = false, updatable = false)
-  private LocalDateTime createdAt;
-  @Column(name = "updated_at", nullable = false)
-  private LocalDateTime updatedAt;
 }

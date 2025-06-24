@@ -18,7 +18,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping("/recipes/")
+@RequestMapping("/recipes")
 @RequiredArgsConstructor
 @Slf4j
 public class RegisterRecipeController {

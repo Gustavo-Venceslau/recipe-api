@@ -34,7 +34,7 @@ import lombok.extern.slf4j.Slf4j;
 @AutoConfigureMockMvc
 @Slf4j
 public class RegisterRecipeControllerTest {
-    static String REGISTER_RECIPE_API = "/recipes/";
+    static String REGISTER_RECIPE_API = "/recipes";
 
     @Autowired
     MockMvc mockMvc;
