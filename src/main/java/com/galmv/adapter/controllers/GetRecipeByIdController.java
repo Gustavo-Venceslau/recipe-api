@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.galmv.application.useCases.implementations.GetRecipeByIdUseCase;
+import com.galmv.application.useCases.IGetRecipeByIdUseCase;
 import com.galmv.domain.entites.Recipe;
 
 import lombok.RequiredArgsConstructor;
@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 @Slf4j
 public class GetRecipeByIdController {
-  private final GetRecipeByIdUseCase getRecipeByIdUseCase;
+  private final IGetRecipeByIdUseCase getRecipeByIdUseCase;
 
   @GetMapping
   public ResponseEntity<Recipe> handle(@PathVariable("id") UUID id) {

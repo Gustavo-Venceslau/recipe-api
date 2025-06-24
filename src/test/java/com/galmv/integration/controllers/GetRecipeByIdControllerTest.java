@@ -20,7 +20,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.galmv.adapter.controllers.GetRecipeByIdController;
-import com.galmv.application.useCases.implementations.GetRecipeByIdUseCase;
+import com.galmv.application.useCases.IGetRecipeByIdUseCase;
 import com.galmv.domain.entites.Recipe;
 import com.galmv.domain.exceptions.ResourceNotFoundException;
 
@@ -38,7 +38,7 @@ public class GetRecipeByIdControllerTest {
     MockMvc mockMvc;
 
     @MockitoBean
-    GetRecipeByIdUseCase getRecipeByIdUseCase;
+    IGetRecipeByIdUseCase getRecipeByIdUseCase;
 
     @Test
     @DisplayName("Given a valid recipe id, when searching, it must return the recipe with 200 OK")

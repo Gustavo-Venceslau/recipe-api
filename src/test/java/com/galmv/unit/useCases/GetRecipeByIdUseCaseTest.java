@@ -16,6 +16,7 @@ import org.mockito.Mock;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import com.galmv.application.useCases.IGetRecipeByIdUseCase;
 import com.galmv.application.useCases.implementations.GetRecipeByIdUseCase;
 import com.galmv.domain.entites.Recipe;
 import com.galmv.domain.exceptions.ResourceNotFoundException;
@@ -25,7 +26,7 @@ import com.galmv.domain.repositories.RecipeRepository;
 @ActiveProfiles("test")
 public class GetRecipeByIdUseCaseTest {
 
-  GetRecipeByIdUseCase getRecipeByIdUseCase;
+  IGetRecipeByIdUseCase getRecipeByIdUseCase;
 
   @Mock
   RecipeRepository recipeRepository;
