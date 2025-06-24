@@ -50,37 +50,58 @@ docker-compose up --build
 ### Register a Recipe
 - **POST** `/recipes`
 - **Request Body:**
-```json
-{
-  "name": "Pasta Carbonara",
-  "ingredients": ["Pasta", "Eggs", "Bacon", "Parmesan"],
-  "instructions": "Boil pasta. Cook bacon. Mix with eggs and cheese."
-}
-```
+  ```json
+  {
+    "name": "Pasta Carbonara",        // string, required
+    "ingredients": ["Pasta", "Eggs", "Bacon", "Parmesan"], // array of strings, required
+    "instructions": "Boil pasta. Cook bacon. Mix with eggs and cheese." // string, required
+  }
+  ```
+- **Response:** Returns the created recipe with its ID.
+
+---
 
 ### Search Recipes
-- **GET** `/recipes?name=pasta&ingredient=egg`
-- **Response:**
-```json
-[
-  {
-    "id": 1,
-    "name": "Pasta Carbonara",
-    "ingredients": ["Pasta", "Eggs", "Bacon", "Parmesan"],
-    "instructions": "Boil pasta. Cook bacon. Mix with eggs and cheese."
-  }
-]
-```
+- **GET** `/recipes/search`
+- **Query Parameters (all optional):**
+  - `vegetarian` (boolean) — Filter by vegetarian recipes
+  - `servings` (integer) — Filter by number of servings
+  - `includeIngredients` (list of strings, e.g., `includeIngredients=Eggs&includeIngredients=Cheese`) — Recipes must include these ingredients
+  - `excludeIngredients` (list of strings) — Recipes must NOT include these ingredients
+  - `instruction` (string) — Filter by instruction text
+- **Response:** Set of recipes matching the filters.
+
+---
 
 ### Get Recipe by ID
 - **GET** `/recipes/{id}`
+- **Path Parameter:**
+  - `id` (UUID) — The recipe's unique identifier
+- **Response:** Returns the recipe with the specified ID.
+
+---
 
 ### Update a Recipe
 - **PUT** `/recipes/{id}`
-- **Request Body:** (same as register)
+- **Path Parameter:**
+  - `id` (UUID) — The recipe's unique identifier
+- **Request Body:**
+  ```json
+  {
+    "name": "Pasta Carbonara",        // string, required
+    "ingredients": ["Pasta", "Eggs", "Bacon", "Parmesan"], // array of strings, required
+    "instructions": "Boil pasta. Cook bacon. Mix with eggs and cheese." // string, required
+  }
+  ```
+- **Response:** Returns the updated recipe.
+
+---
 
 ### Delete a Recipe
 - **DELETE** `/recipes/{id}`
+- **Path Parameter:**
+  - `id` (UUID) — The recipe's unique identifier
+- **Response:** No content (204) on success.
 
 ## Testing
 
