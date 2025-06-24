@@ -39,7 +39,7 @@ public class Recipe extends BaseEntity {
   private String instructions;
   @Column(name = "servings", nullable = false)
   private Integer servings;
-  @Column(name = "vegetarian")
+  @Column(name = "vegetarian", nullable = false)
   @Builder.Default
   private Boolean vegetarian = false;
 }

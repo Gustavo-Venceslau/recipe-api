@@ -20,7 +20,7 @@ public class RegisterRecipeUseCase implements IRegisterRecipeUseCase{
         .description(recipe.description())
         .ingredients(recipe.ingredients())
         .servings(recipe.servings())
-        .vegetarian(recipe.vegetarian())
+        .vegetarian(recipe.vegetarian() != null ? recipe.vegetarian() : false)
         .instructions(recipe.instructions())
         .build();
 
