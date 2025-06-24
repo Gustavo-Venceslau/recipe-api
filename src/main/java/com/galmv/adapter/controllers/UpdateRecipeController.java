@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.galmv.application.interfaces.UpdateRecipeRequest;
-import com.galmv.application.useCases.implementations.UpdateRecipeUseCase;
+import com.galmv.application.useCases.IUpdateRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 
 import jakarta.validation.Valid;
@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 @Slf4j
 public class UpdateRecipeController {
-  private final UpdateRecipeUseCase updateRecipeUseCase;
+  private final IUpdateRecipeUseCase updateRecipeUseCase;
 
   @PutMapping
   public ResponseEntity<Recipe> handle(

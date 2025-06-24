@@ -23,7 +23,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.galmv.adapter.controllers.UpdateRecipeController;
 import com.galmv.application.interfaces.UpdateRecipeRequest;
-import com.galmv.application.useCases.implementations.UpdateRecipeUseCase;
+import com.galmv.application.useCases.IUpdateRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 import com.galmv.domain.exceptions.ResourceNotFoundException;
 
@@ -41,7 +41,7 @@ public class UpdateRecipeControllerTest {
     MockMvc mockMvc;
 
     @MockitoBean
-    UpdateRecipeUseCase updateRecipeUseCase;
+    IUpdateRecipeUseCase updateRecipeUseCase;
 
     @Autowired
     ObjectMapper objectMapper;

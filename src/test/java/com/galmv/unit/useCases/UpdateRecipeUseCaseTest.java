@@ -18,6 +18,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.galmv.application.interfaces.UpdateRecipeRequest;
+import com.galmv.application.useCases.IUpdateRecipeUseCase;
 import com.galmv.application.useCases.implementations.UpdateRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 import com.galmv.domain.exceptions.ResourceNotFoundException;
@@ -27,7 +28,7 @@ import com.galmv.domain.repositories.RecipeRepository;
 @ActiveProfiles("test")
 public class UpdateRecipeUseCaseTest {
 
-  UpdateRecipeUseCase updateRecipeUseCase;
+  IUpdateRecipeUseCase updateRecipeUseCase;
 
   @Mock
   RecipeRepository recipeRepository;
