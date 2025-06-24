@@ -1,12 +1,9 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5433/recipe
-    username: postgres
-    password: postgres
-    driver-class-name: org.postgresql.Driver
+  profiles:
+    active: dev
   jpa:
-    hibernate:
-      ddl-auto: update
-    database: postgresql
-server:
-  port: 8080
+    open-in-view: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true

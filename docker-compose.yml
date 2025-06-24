@@ -7,11 +7,13 @@ services:
     depends_on:
       - database
     environment:
+      - SPRING_PROFILES_ACTIVE=prod
       - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/recipe
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
+    restart: always
     networks:
-      - recip
+      - recipe
   database:
     container_name: recipe-database
     image: bitnami/postgresql
