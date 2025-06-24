@@ -6,6 +6,7 @@ import java.util.UUID;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -32,7 +33,7 @@ public class Recipe extends BaseEntity {
   @Column(name = "description", length = 1000)
   private String description;
   @Column(name = "ingredients", nullable = false)
-  @ElementCollection
+  @ElementCollection(fetch = FetchType.EAGER)
   private List<String> ingredients;
   @Column(name = "instructions", nullable = false, length = 2000)
   private String instructions;
