@@ -35,9 +35,11 @@ public class UpdateRecipeUseCase implements IUpdateRecipeUseCase{
   }
 
   private void updateRecipeData(Recipe recipe, UpdateRecipeRequest data) {
-    recipe.setTitle(data.title());
-    recipe.setDescription(data.description());
-    recipe.setIngredients(data.ingridients());
-    recipe.setInstructions(data.instructions());
+    Optional.ofNullable(data.title()).ifPresent(recipe::setTitle);
+    Optional.ofNullable(data.description()).ifPresent(recipe::setDescription);
+    Optional.ofNullable(data.ingridients()).ifPresent(recipe::setIngredients);
+    Optional.ofNullable(data.instructions()).ifPresent(recipe::setInstructions);
+    Optional.ofNullable(data.servings()).ifPresent(recipe::setServings);
+    Optional.ofNullable(data.vegetarian()).ifPresent(recipe::setVegetarian);
   }
 }
