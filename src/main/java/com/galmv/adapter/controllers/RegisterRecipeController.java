@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.galmv.application.interfaces.RegisterRecipeRequest;
-import com.galmv.application.useCases.RegisterRecipeUseCase;
+import com.galmv.application.useCases.IRegisterRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 
 import jakarta.validation.Valid;
@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class RegisterRecipeController {
 
-  private final RegisterRecipeUseCase registerRecipeUseCase;
+  private final IRegisterRecipeUseCase registerRecipeUseCase;
 
   @PostMapping
   public ResponseEntity<Recipe> handle(@Valid @RequestBody RegisterRecipeRequest request) {

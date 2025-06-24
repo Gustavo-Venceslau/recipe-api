@@ -14,7 +14,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.galmv.application.interfaces.RegisterRecipeRequest;
-import com.galmv.application.useCases.RegisterRecipeUseCase;
+import com.galmv.application.useCases.IRegisterRecipeUseCase;
+import com.galmv.application.useCases.implementations.RegisterRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 import com.galmv.domain.repositories.RecipeRepository;
 
@@ -22,7 +23,7 @@ import com.galmv.domain.repositories.RecipeRepository;
 @ActiveProfiles("test")
 public class RegisterRecipeUseCaseTest {
 
-  RegisterRecipeUseCase registerRecipeUseCase;
+  IRegisterRecipeUseCase registerRecipeUseCase;
 
   @Mock
   RecipeRepository recipeRepository;

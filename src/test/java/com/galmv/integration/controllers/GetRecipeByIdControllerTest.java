@@ -20,7 +20,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.galmv.adapter.controllers.GetRecipeByIdController;
-import com.galmv.application.useCases.GetRecipeByIdUseCase;
+import com.galmv.application.useCases.implementations.GetRecipeByIdUseCase;
 import com.galmv.domain.entites.Recipe;
 import com.galmv.domain.exceptions.ResourceNotFoundException;
 

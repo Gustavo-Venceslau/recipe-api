@@ -23,7 +23,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.galmv.adapter.controllers.RegisterRecipeController;
 import com.galmv.application.interfaces.RegisterRecipeRequest;
-import com.galmv.application.useCases.RegisterRecipeUseCase;
+import com.galmv.application.useCases.IRegisterRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 
 import lombok.extern.slf4j.Slf4j;
@@ -40,7 +40,7 @@ public class RegisterRecipeControllerTest {
     MockMvc mockMvc;
 
     @MockitoBean
-    RegisterRecipeUseCase registerRecipeUseCase;
+    IRegisterRecipeUseCase registerRecipeUseCase;
 
     @Autowired
     ObjectMapper objectMapper;

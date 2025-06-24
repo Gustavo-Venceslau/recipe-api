@@ -1,4 +1,4 @@
-package com.galmv.application.useCases;
+package com.galmv.application.useCases.implementations;
 
 import java.util.Set;
 

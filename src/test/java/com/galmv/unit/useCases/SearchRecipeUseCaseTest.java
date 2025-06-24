@@ -18,7 +18,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.galmv.application.interfaces.SearchRecipesFilter;
-import com.galmv.application.useCases.SearchRecipeUseCase;
+import com.galmv.application.useCases.implementations.SearchRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 import com.galmv.domain.repositories.RecipeRepository;
 

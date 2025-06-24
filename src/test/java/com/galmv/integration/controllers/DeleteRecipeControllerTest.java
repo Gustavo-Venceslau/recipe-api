@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.galmv.adapter.controllers.DeleteRecipeController;
-import com.galmv.application.useCases.DeleteRecipeUseCase;
+import com.galmv.application.useCases.implementations.DeleteRecipeUseCase;
 import com.galmv.domain.exceptions.ResourceNotFoundException;
 
 import lombok.extern.slf4j.Slf4j;

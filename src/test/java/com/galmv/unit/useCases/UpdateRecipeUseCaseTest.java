@@ -18,7 +18,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.galmv.application.interfaces.UpdateRecipeRequest;
-import com.galmv.application.useCases.UpdateRecipeUseCase;
+import com.galmv.application.useCases.implementations.UpdateRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 import com.galmv.domain.exceptions.ResourceNotFoundException;
 import com.galmv.domain.repositories.RecipeRepository;

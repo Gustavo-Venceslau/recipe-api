@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.galmv.application.interfaces.UpdateRecipeRequest;
-import com.galmv.application.useCases.UpdateRecipeUseCase;
+import com.galmv.application.useCases.implementations.UpdateRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 
 import jakarta.validation.Valid;

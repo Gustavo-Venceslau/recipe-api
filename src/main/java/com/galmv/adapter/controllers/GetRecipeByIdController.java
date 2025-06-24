@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.galmv.application.useCases.GetRecipeByIdUseCase;
+import com.galmv.application.useCases.implementations.GetRecipeByIdUseCase;
 import com.galmv.domain.entites.Recipe;
 
 import lombok.RequiredArgsConstructor;

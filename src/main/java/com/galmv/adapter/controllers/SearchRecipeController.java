@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.galmv.application.interfaces.SearchRecipesFilter;
-import com.galmv.application.useCases.SearchRecipeUseCase;
+import com.galmv.application.useCases.implementations.SearchRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 
 import lombok.RequiredArgsConstructor;

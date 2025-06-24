@@ -23,7 +23,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.galmv.adapter.controllers.SearchRecipeController;
 import com.galmv.application.interfaces.SearchRecipesFilter;
-import com.galmv.application.useCases.SearchRecipeUseCase;
+import com.galmv.application.useCases.implementations.SearchRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 
 import lombok.extern.slf4j.Slf4j;
