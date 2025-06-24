@@ -6,6 +6,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import com.galmv.application.interfaces.SearchRecipesFilter;
+import com.galmv.application.useCases.ISearchRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 import com.galmv.domain.repositories.RecipeRepository;
 
@@ -13,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class SearchRecipeUseCase {
+public class SearchRecipeUseCase implements ISearchRecipeUseCase{
   private final RecipeRepository recipeRepository;
 
   public Set<Recipe> execute(SearchRecipesFilter filter) {

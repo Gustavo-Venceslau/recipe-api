@@ -23,7 +23,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.galmv.adapter.controllers.SearchRecipeController;
 import com.galmv.application.interfaces.SearchRecipesFilter;
-import com.galmv.application.useCases.implementations.SearchRecipeUseCase;
+import com.galmv.application.useCases.ISearchRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 
 import lombok.extern.slf4j.Slf4j;
@@ -40,7 +40,7 @@ public class SearchRecipeControllerTest {
   MockMvc mockMvc;
 
   @MockitoBean
-  SearchRecipeUseCase searchRecipeUseCase;
+  ISearchRecipeUseCase searchRecipeUseCase;
 
   @Test
   @DisplayName("Given a recipe search parameters, when trying to search, it must return the recipes associated")

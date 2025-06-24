@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.galmv.application.interfaces.SearchRecipesFilter;
-import com.galmv.application.useCases.implementations.SearchRecipeUseCase;
+import com.galmv.application.useCases.ISearchRecipeUseCase;
 import com.galmv.domain.entites.Recipe;
 
 import lombok.RequiredArgsConstructor;
@@ -21,8 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 @Slf4j
 public class SearchRecipeController {
-
-  private final SearchRecipeUseCase searchRecipeUseCase;
+  private final ISearchRecipeUseCase searchRecipeUseCase;
 
   @GetMapping
   public ResponseEntity<Set<Recipe>> handle(
